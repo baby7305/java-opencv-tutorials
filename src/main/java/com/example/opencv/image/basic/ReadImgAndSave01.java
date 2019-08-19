@@ -1,11 +1,11 @@
 package com.example.opencv.image.basic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ReadImgAndSave01 {
     static {

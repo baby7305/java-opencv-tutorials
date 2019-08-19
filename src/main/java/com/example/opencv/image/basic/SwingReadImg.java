@@ -1,14 +1,12 @@
 package com.example.opencv.image.basic;
 
-import java.awt.EventQueue;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import java.awt.image.BufferedImage;
-
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class SwingReadImg {
     static {
