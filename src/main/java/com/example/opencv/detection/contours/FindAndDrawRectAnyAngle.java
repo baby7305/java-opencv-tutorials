@@ -102,11 +102,26 @@ public class FindAndDrawRectAnyAngle {
 
         for (int i = 0; i < contours.size(); i++) {
             RotatedRect r = Imgproc.minAreaRect(new MatOfPoint2f(contours.get(i).toArray()));
+            Mat boxMat = new Mat();
+            Imgproc.boxPoints(r, boxMat);
+            // System.out.println(boxMat.dump());//發現有浮點數,故要宣告 MatOfPoint2f
             Imgproc.drawContours(drawing, contours, i, new Scalar(255, 0, 0, 255), 2);
-            r.points(allPoint);
-            for (int j = 0; j < 4; j++) {
-                Imgproc.line(drawing, allPoint[j], allPoint[(j + 1) % 4], new Scalar(0, 255, 0), 2);
-            }
+
+            MatOfPoint2f allPointMatOfPoint = new MatOfPoint2f(boxMat);
+            allPoint = allPointMatOfPoint.toArray();
+
+
+            //矩形的4個點
+            Imgproc.line(drawing, allPoint[0], allPoint[1], new Scalar(0, 255, 0), 2);
+            Imgproc.line(drawing, allPoint[1], allPoint[2], new Scalar(0, 255, 0), 2);
+            Imgproc.line(drawing, allPoint[2], allPoint[3], new Scalar(0, 255, 0), 2);
+            Imgproc.line(drawing, allPoint[3], allPoint[0], new Scalar(0, 255, 0), 2);
+
+            //       	 System.out.println(boxMat.dump());
+//        	 r.points(allPoint);
+//        	 for (int j = 0; j < 4; j++){
+//        		 Imgproc.line(drawing, allPoint[j], allPoint[(j+1)%4], new Scalar(0,255,0),2);
+//        	 }
 
         }
 
