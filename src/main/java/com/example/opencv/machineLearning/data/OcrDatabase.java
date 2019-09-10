@@ -148,7 +148,7 @@ public class OcrDatabase {
     Mat testSample2FrTrainMat = new Mat(1, 144, CvType.CV_32FC1);
 
 
-    Mat sample7 = new Mat(1, 144, CvType.CV_32FC1);
+    public Mat sample7 = new Mat(1, 144, CvType.CV_32FC1);
 
     public OcrDatabase() {
 
